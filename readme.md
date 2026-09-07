@@ -1,6 +1,9 @@
-# Atlas Travel Catalogue
+# U-AT_lasTravel (Travel Web APP)
 
-A complete implementation for Cloud Computing Assignment 2: Public Cloud. It supports adding destinations, listing all destinations, filtering by search/continent/mood/budget, validation with friendly errors, and deployment to a public Azure URL.
+#### UDIT
+#### 2025SIY7621, MS Research IIT Delhi
+
+Implementation for Cloud Computing Course Assign 2: Public Cloud. It supports adding destinations, listing all destinations, filtering by search/continent/mood/budget, validation and deployment to a public Azure URL.
 
 ## Local development
 
