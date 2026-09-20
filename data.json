@@ -1,5 +1,17 @@
 [
   {
+    "id": "559facd4-61ea-4e35-8717-0917f34b2c71",
+    "name": "Bombay",
+    "country": "india",
+    "continent": "Asia",
+    "type": "Beach",
+    "budget": 22,
+    "bestSeason": "spring",
+    "description": "Economic Capital of India, IIT Bombay",
+    "imageUrl": "https://d1vwxdpzbgdqj.cloudfront.net/s3-public-images/iitb/iitb_image.jpeg",
+    "createdAt": "2026-09-20T22:45:04.895Z"
+  },
+  {
     "id": "bec342d6-bbd3-4d23-b57e-716a4b008bb6",
     "name": "New Delhi",
     "country": "India",
