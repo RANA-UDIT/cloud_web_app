@@ -8,8 +8,6 @@
 
 This travel catalogue application for the Cloud Computing course-(IITD) given custom name **U-AT_lasTravel**. Users can add travel destinations, see all destinations, and filter the list using different attributes.
 
-## Public application
-
 The application is deployed on Azure App Service and can be opened here:
 
 https://travel-catalogue-udit-gverg3cgd3auf7bb.centralindia-01.azurewebsites.net/
@@ -18,7 +16,7 @@ The source code is available here in GitHub repository:
 
 https://github.com/RANA-UDIT/cloud_web_app
 
-## Assignment requirements
+## Overview and Requirements
 
 ### Data layer
 
@@ -57,7 +55,7 @@ User
 	| HTTPS
 	v
 Azure App Service
-Node.js + Express
+Node.js + Express  _________
    |          |             |
    |          |             +--> Application Insights
    |          |
