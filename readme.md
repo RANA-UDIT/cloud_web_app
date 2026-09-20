@@ -4,9 +4,9 @@
 
 #### 2025SIY7621, MS Research IIT Delhi
 
-## Assignment 2 - Public Cloud
+### Assignment 2 - Public Cloud
 
-This travel catalogue application for the Cloud Computing course (IITD). Users can add travel destinations, see all destinations, and filter the list using different attributes.
+This travel catalogue application for the Cloud Computing course-(IITD) given custom name **U-AT_lasTravel**. Users can add travel destinations, see all destinations, and filter the list using different attributes.
 
 ## Public application
 
@@ -84,7 +84,7 @@ The application accepts an optional JPG, PNG, or WEBP image up to 5 MB. The imag
 
 Two public cloud features were integrated into the application: Azure Blob Storage and Application Insights. Both are connected to the Node.js backend through Azure App Service environment variables.
 
-## Features Added and Why They Are Useful
+## Additional Cloud Features Added and Usecase
 
 ### 1. Azure Blob Storage image upload
 
@@ -139,17 +139,7 @@ http://localhost:3000
 Without Azure environment variables, the app reads and writes `data.json`. With the Azure environment variables, it uses Cosmos DB and Blob Storage.
 
 ## Deployment
-1. Azure App Service is connected to the private GitHub repository.
+1. Azure App Service is connected to the GitHub repository.
 2. GitHub Actions installs the Node.js packages and deploys the application.
 3. Azure App Service reads the environment variables from its configuration.
 4. The live URL is the public application URL listed above.
-
-## Testing completed
-
-- The application loads in a browser.
-- Existing destinations are listed.
-- A new destination can be added.
-- Search and filters return matching destinations.
-- Invalid data returns a clear error instead of crashing the application.
-- Uploaded images are sent to Blob Storage when storage configuration is available.
-- Saved destinations are stored in Cosmos DB when Cosmos configuration is available.
