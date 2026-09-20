@@ -156,6 +156,11 @@ footer,
   outline: 0;
   border-radius: 12px;
 }
+.toolbar select option,
+.form-grid select option {
+  color: #1d2b29;
+  background: #ffffff;
+}
 .toolbar input:focus,
 .toolbar select:focus,
 .form-grid input:focus,
