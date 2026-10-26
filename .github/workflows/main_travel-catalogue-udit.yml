@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -59,7 +59,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'travel-catalogue-udit'
+          app-name: ${{ vars.AZURE_WEBAPP_NAME || 'travel-catalogue-udit' }}
           slot-name: 'Production'
           package: .
-          

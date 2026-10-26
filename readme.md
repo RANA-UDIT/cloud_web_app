@@ -141,3 +141,7 @@ Without Azure environment variables, the app reads and writes `data.json`. With 
 2. GitHub Actions installs the Node.js packages and deploys the application.
 3. Azure App Service reads the environment variables from its configuration.
 4. The live URL is the public application URL listed above.
+
+## Assignment 3
+
+Assignment 3 Terraform files, deployment and cost-estimation instructions, and a read-only Locust load test are in [`infra/terraform/`](./infra/terraform/), [`loadtest/`](./loadtest/), and [`docs/assignment-3.md`](./docs/assignment-3.md). The Terraform stack is separate from the manually created Assignment 2 resources. Review the cost and cleanup guidance before creating Azure resources.
