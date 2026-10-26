@@ -2,6 +2,8 @@
 
 This guide extends the Assignment 2 travel catalogue without changing or importing its manually created Azure resources. The Terraform configuration creates a separate resource group and app stack, so the original deployment remains untouched. Terraform files are in [`../infra/terraform/`](../infra/terraform/); the read-only Locust scenario is in [`../loadtest/`](../loadtest/).
 
+The Terraform defaults match the working Assignment 2 hosting setup: Central India, Linux Basic B1, and Node.js 24 LTS. The new Cosmos DB account uses serverless capacity in Central India, and the storage account uses standard RA-GRS replication. This provisions new resources; it does not reuse the Assignment 2 resources.
+
 ## Before creating Azure resources
 
 - Sign in to the intended Azure subscription and confirm its current budget and available credits.
@@ -62,7 +64,7 @@ Alternatively, use the Azure portal's App Service Deployment Center to connect t
 
 Open the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) and add the Azure services in the Terraform stack. Select **Central India** where the calculator offers a region choice. Prices and free allowances vary by account, region, and date; record the estimate and calculator date rather than treating an example as a guaranteed bill.
 
-Use these explicit monthly assumptions as a starting point, and adjust them if your observed load differs:
+In the calculator, explicitly choose **Central India**, **Linux**, **Basic B1**, and 730 hours for App Service. The supplied calculator text had Windows selected; its displayed monthly price is for that Windows selection, so do not use it as the Linux estimate. Record the monthly price shown after switching to Linux. Use these explicit monthly assumptions as a starting point, and adjust them if your observed load differs:
 
 | Assumption | Estimate |
 |---|---:|
@@ -70,10 +72,10 @@ Use these explicit monthly assumptions as a starting point, and adjust them if y
 | Requests | 20 requests/user/day, about 60,000 requests/month |
 | App Service | 1 Linux Basic B1 instance, 730 hours/month |
 | Cosmos DB | Serverless, estimate 300,000 request units/month (assume 5 RU per request; actual operations vary) |
-| Blob Storage | 1 GB, locally redundant storage |
+| Blob Storage | 1 GB, read-access geo-redundant storage (RA-GRS) |
 | Monitoring | 0.5 GB of logs/telemetry ingested per month; 30-day retention |
 
-Include App Service, Azure Cosmos DB for NoSQL (serverless), Storage Accounts (Blob, LRS), and Application Insights/Log Analytics. If the calculator does not expose the exact serverless or monitoring field, state the closest available input and the assumption you used. Capture a screenshot of the completed calculator estimate with the monthly total and configuration visible.
+Include App Service, Azure Cosmos DB for NoSQL (serverless), Storage Accounts (Blob, RA-GRS), and Application Insights/Log Analytics. If the calculator does not expose the exact serverless or monitoring field, state the closest available input and the assumption you used. Capture a screenshot of the completed calculator estimate with the monthly total and configuration visible.
 
 ## Part 3: Monitoring and performance analysis
 

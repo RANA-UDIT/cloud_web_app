@@ -73,8 +73,8 @@ resource "azurerm_storage_account" "travel" {
   name                     = "travelimg${local.suffix}"
   resource_group_name      = azurerm_resource_group.travel.name
   location                 = azurerm_resource_group.travel.location
-  account_tier              = "Standard"
-  account_replication_type = "LRS"
+  account_tier             = "Standard"
+  account_replication_type = "RAGRS"
   min_tls_version          = "TLS1_2"
 
   # The application creates a blob-public container for uploaded images.
@@ -109,7 +109,7 @@ resource "azurerm_linux_web_app" "travel" {
     minimum_tls_version = "1.2"
 
     application_stack {
-      node_version = "20-lts"
+      node_version = "24-lts"
     }
   }
 
@@ -122,7 +122,7 @@ resource "azurerm_linux_web_app" "travel" {
     COSMOS_ENDPOINT                       = azurerm_cosmosdb_account.travel.endpoint
     COSMOS_KEY                            = azurerm_cosmosdb_account.travel.primary_key
     NODE_ENV                              = "production"
-    WEBSITE_NODE_DEFAULT_VERSION          = "~20"
+    WEBSITE_NODE_DEFAULT_VERSION          = "~24"
   }
 
   tags = local.tags
